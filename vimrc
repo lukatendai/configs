@@ -12,12 +12,13 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-scriptease'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'unblevable/quick-scope'  
+"Plug 'unblevable/quick-scope'  
 Plug 'scrooloose/nerdtree'
 
 Plug 'SirVer/ultisnips'
 Plug 't9md/vim-choosewin'
 Plug 'garyburd/go-explorer'
+Plug 'osyo-manga/vim-over'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim'
@@ -29,6 +30,7 @@ endif
 " filetype plugins
 Plug 'elzr/vim-json', {'for' : 'json'}
 Plug 'ekalinin/Dockerfile.vim', {'for' : 'Dockerfile'}
+Plug 'fatih/vim-nginx' , {'for' : 'nginx'}
 Plug 'corylanou/vim-present', {'for' : 'present'}
 call plug#end()
 syntax on
@@ -66,3 +68,4 @@ function! s:build_go_files()
     call go#cmd#Build(0)
   endif
 endfunction
+set dir=~/tmp
