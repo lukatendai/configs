@@ -1,0 +1,9 @@
+export PATH=$PATH:"/usr/local/bin:/usr/bin:/bin"
+export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/bin/mongodb/bin
+export GOPATH=$HOME/golang
+export GOBIN=$HOME/golang/bin
+export GOROOT=$HOME/bin/go
+export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$GOBIN
+export PATH=$PATH:$HOME/bin/go_appengine/
