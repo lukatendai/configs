@@ -33,14 +33,15 @@ Plug 'elzr/vim-json', {'for' : 'json'}
 Plug 'ekalinin/Dockerfile.vim', {'for' : 'Dockerfile'}
 "Plug 'fatih/vim-nginx' , {'for' : 'nginx'}
 Plug 'corylanou/vim-present', {'for' : 'present'}
-
+Plug 'StanAngeloff/php.vim'
+Plug 'junegunn/vim-easy-align'
 call plug#end()
 " my stuff
 set dir=~/tmp
 set guifont=Hack:h10
 nnoremap <F5> :buffers<CR>:buffer<Space>
-nnoremap <Tab> :bnext<CR>
-nnoremap <S-Tab> :bprevious<CR>
+nnoremap <A-PageUp> :bnext<CR>
+nnoremap <A-PageDown> :bprevious<CR>
 set nowrap
 
 "=====================================================
@@ -70,7 +71,7 @@ endif
 set noerrorbells             " No beeps
 set number                   " Show line numbers
 set showcmd                  " Show me what I'm typing
-set noswapfile               " Don't use swapfile
+"set noswapfile               " Don't use swapfile
 set nobackup                 " Don't create annoying backup files
 set splitright               " Split vertical windows right to the current windows
 set splitbelow               " Split horizontal windows below to the current windows
@@ -536,7 +537,7 @@ endfunction
 noremap <Leader>n :NERDTreeToggle<cr>
 noremap <Leader>f :NERDTreeFind<cr>
 
-let NERDTreeShowHidden=1
+let NERDTreeShowHidden=0
 
 " ==================== vim-json ====================
 let g:vim_json_syntax_conceal = 0
@@ -613,7 +614,7 @@ nmap  -  <Plug>(choosewin)
 " Trigger a highlight in the appropriate direction when pressing these keys:
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
-hi MatchParen cterm=none ctermbg=darkyellow ctermfg=grey
+hi MatchParen cterm=none ctermbg=none ctermfg=red
 
 
 " vim: sw=2 sw=2 et
