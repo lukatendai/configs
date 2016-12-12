@@ -38,7 +38,6 @@ Plug 'junegunn/vim-easy-align'
 call plug#end()
 " my stuff
 set dir=~/tmp
-set guifont=Hack:h10
 nnoremap <F5> :buffers<CR>:buffer<Space>
 nnoremap <A-PageUp> :bnext<CR>
 nnoremap <A-PageDown> :bprevious<CR>
@@ -168,6 +167,7 @@ else
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
   let g:rehash256 = 1
   set background=dark
+  set termguicolors
   colorscheme molokai
 endif
 
