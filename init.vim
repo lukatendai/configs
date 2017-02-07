@@ -26,15 +26,18 @@ else
   Plug 'Shougo/neocomplete.vim'
 endif
 
-" filetype plugins
-"Plug 'vim-ruby/vim-ruby'
+"filetype plugins
 Plug 'elzr/vim-json', {'for' : 'json'}
-"Plug 'tejr/vim-tmux', {'for': 'tmux'}
+Plug 'tmux-plugins/vim-tmux', {'for': 'tmux'}
 Plug 'ekalinin/Dockerfile.vim', {'for' : 'Dockerfile'}
-"Plug 'fatih/vim-nginx' , {'for' : 'nginx'}
 Plug 'corylanou/vim-present', {'for' : 'present'}
 Plug 'StanAngeloff/php.vim'
 Plug 'junegunn/vim-easy-align'
+"AngularJS stuff
+Plug 'pangloss/vim-javascript'
+Plug 'othree/yajs'
+Plug 'burnettk/vim-angular'
+Plug 'mattn/emmet-vim'
 call plug#end()
 " my stuff
 set dir=~/tmp
@@ -42,7 +45,7 @@ nnoremap <F5> :buffers<CR>:buffer<Space>
 nnoremap <A-PageUp> :bnext<CR>
 nnoremap <A-PageDown> :bprevious<CR>
 set nowrap
-
+set mouse=a mousemodel=popup
 "=====================================================
 "===================== SETTINGS ======================
 
@@ -64,7 +67,6 @@ if !has('nvim')
   set backspace=indent,eol,start  " Makes backspace key more powerful.
   set incsearch                   " Shows the match while typing
   set hlsearch                    " Highlight found searches
-  set mouse=a      
 endif
 
 set noerrorbells             " No beeps
