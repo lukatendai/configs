@@ -1,5 +1,8 @@
-call plug#begin('~/.config/nvim/plugged')
-
+if has('nvim')
+  call plug#begin('~/.config/nvim/plugged')
+else
+  call plug#begin('~/.config/vim/plugged')
+endif
 Plug 'fatih/vim-go'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'Raimondi/delimitMate'
@@ -570,7 +573,7 @@ else
   let g:neocomplete#sources.go = ['omni']
 
   " disable sorting
-  call neocomplete#custom#source('_', 'sorters', [])
+  "call neocomplete#custom#source('_', 'sorters', [])
 endif
 
 " ==================== UltiSnips ====================
