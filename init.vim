@@ -40,7 +40,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'pangloss/vim-javascript'
 Plug 'othree/yajs'
 Plug 'burnettk/vim-angular'
-Plug 'mattn/emmet-vim'
+"Plug 'mattn/emmet-vim'
 call plug#end()
 " my stuff
 set dir=~/tmp
