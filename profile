@@ -7,3 +7,4 @@ export GOROOT=$HOME/bin/go
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOBIN
 export PATH=$PATH:$HOME/bin/go_appengine/
+export TERM='xterm-256color'
