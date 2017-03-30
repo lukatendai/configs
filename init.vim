@@ -3,6 +3,7 @@ if has('nvim')
 else
   call plug#begin('~/.config/vim/plugged')
 endif
+
 Plug 'fatih/vim-go'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'Raimondi/delimitMate'
@@ -37,16 +38,24 @@ Plug 'corylanou/vim-present', {'for' : 'present'}
 Plug 'StanAngeloff/php.vim'
 Plug 'junegunn/vim-easy-align'
 "AngularJS stuff
-Plug 'pangloss/vim-javascript'
+"Plug 'pangloss/vim-javascript'
+Plug 'maksimr/vim-jsbeautify'
 Plug 'othree/yajs'
 Plug 'burnettk/vim-angular'
+" below plugin couses issues with Enter
 "Plug 'mattn/emmet-vim'
+Plug 'rhysd/committia.vim'
 call plug#end()
 " my stuff
 set dir=~/tmp
 nnoremap <F5> :buffers<CR>:buffer<Space>
 nnoremap <A-PageUp> :bnext<CR>
 nnoremap <A-PageDown> :bprevious<CR>
+autocmd FileType javascript noremap <buffer>  <C-M-f> :call JsBeautify()<cr>
+autocmd FileType json noremap <buffer> <C-M-f> :call JsonBeautify()<cr>
+autocmd FileType jsx noremap <buffer> <C-M-f> :call JsxBeautify()<cr>
+autocmd FileType html noremap <buffer> <C-M-f> :call HtmlBeautify()<cr>
+autocmd FileType css noremap <buffer> <C-M-f> :call CSSBeautify()<cr>
 set nowrap
 set mouse=a mousemodel=popup
 "=====================================================
@@ -187,7 +196,7 @@ autocmd BufNewFile,BufRead *.md setlocal noet ts=4 sw=4
 autocmd BufNewFile,BufRead *.vim setlocal expandtab shiftwidth=2 tabstop=2
 
 autocmd FileType json setlocal expandtab shiftwidth=2 tabstop=2
-autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
+autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 tabstop=4 expandtab
 
 augroup filetypedetect
   autocmd BufNewFile,BufRead .tmux.conf*,tmux.conf* setf tmux
@@ -573,7 +582,7 @@ else
   let g:neocomplete#sources.go = ['omni']
 
   " disable sorting
-  "call neocomplete#custom#source('_', 'sorters', [])
+  call neocomplete#custom#source('_', 'sorters', [])
 endif
 
 " ==================== UltiSnips ====================
