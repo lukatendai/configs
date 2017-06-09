@@ -6,5 +6,8 @@ export GOBIN=$HOME/golang/bin
 export GOROOT=$HOME/bin/go
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOBIN
-export PATH=$PATH:$HOME/bin/go_appengine/
-export TERM='xterm-256color'
+export GORACE="log_path=$HOME/tmp/race/report"
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
+export COLORTERM=gnome-terminal

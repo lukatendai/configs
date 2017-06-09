@@ -56,6 +56,7 @@ autocmd FileType json noremap <buffer> <C-M-f> :call JsonBeautify()<cr>
 autocmd FileType jsx noremap <buffer> <C-M-f> :call JsxBeautify()<cr>
 autocmd FileType html noremap <buffer> <C-M-f> :call HtmlBeautify()<cr>
 autocmd FileType css noremap <buffer> <C-M-f> :call CSSBeautify()<cr>
+autocmd FileType html setlocal ts=4 sw=4 sts=4
 set nowrap
 set mouse=a mousemodel=popup
 "=====================================================
