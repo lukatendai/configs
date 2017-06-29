@@ -70,7 +70,7 @@ if !has('nvim')
   filetype plugin indent on
 
   set ttyfast
-  set ttymouse=xterm2
+  "set ttymouse=xterm2
   set ttyscroll=3
 
   set laststatus=2
