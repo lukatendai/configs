@@ -10,4 +10,7 @@ export GORACE="log_path=$HOME/tmp/race/report"
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
-export COLORTERM=gnome-terminal
+export COLORTERM=gnome-256color
+export QT_STYLE_OVERRIDE=adwaita
+export RR_TMPDIR="$HOME/tmp/"
+export TERM=gnome-256color
