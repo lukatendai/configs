@@ -3,6 +3,7 @@ if has('nvim')
 else
   call plug#begin('~/.config/vim/plugged')
 endif
+
 Plug 'fatih/vim-go'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'Raimondi/delimitMate'
@@ -20,7 +21,6 @@ Plug 'scrooloose/nerdtree'
 
 Plug 'SirVer/ultisnips'
 Plug 't9md/vim-choosewin'
-Plug 'garyburd/go-explorer'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim'
@@ -37,16 +37,26 @@ Plug 'corylanou/vim-present', {'for' : 'present'}
 Plug 'StanAngeloff/php.vim'
 Plug 'junegunn/vim-easy-align'
 "AngularJS stuff
-Plug 'pangloss/vim-javascript'
+"Plug 'pangloss/vim-javascript'
+Plug 'maksimr/vim-jsbeautify'
 Plug 'othree/yajs'
 Plug 'burnettk/vim-angular'
+" below plugin couses issues with Enter
 "Plug 'mattn/emmet-vim'
+Plug 'rhysd/committia.vim'
+Plug 'dart-lang/dart-vim-plugin'
 call plug#end()
 " my stuff
 set dir=~/tmp
 nnoremap <F5> :buffers<CR>:buffer<Space>
 nnoremap <A-PageUp> :bnext<CR>
 nnoremap <A-PageDown> :bprevious<CR>
+autocmd FileType javascript noremap <buffer>  <C-M-f> :call JsBeautify()<CR>
+autocmd FileType json noremap <buffer> <C-M-f> :call JsonBeautify()<CR>
+autocmd FileType jsx noremap <buffer> <C-M-f> :call JsxBeautify()<CR>
+autocmd FileType html noremap <buffer> <C-M-f> :call HtmlBeautify()<CR>
+autocmd FileType css noremap <buffer> <C-M-f> :call CSSBeautify()<CR>
+autocmd FileType html setlocal ts=4 sw=4 sts=4
 set nowrap
 set mouse=a mousemodel=popup
 "=====================================================
@@ -187,7 +197,7 @@ autocmd BufNewFile,BufRead *.md setlocal noet ts=4 sw=4
 autocmd BufNewFile,BufRead *.vim setlocal expandtab shiftwidth=2 tabstop=2
 
 autocmd FileType json setlocal expandtab shiftwidth=2 tabstop=2
-autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
+autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 tabstop=4 expandtab
 
 augroup filetypedetect
   autocmd BufNewFile,BufRead .tmux.conf*,tmux.conf* setf tmux
@@ -573,7 +583,7 @@ else
   let g:neocomplete#sources.go = ['omni']
 
   " disable sorting
-  "call neocomplete#custom#source('_', 'sorters', [])
+  call neocomplete#custom#source('_', 'sorters', [])
 endif
 
 " ==================== UltiSnips ====================

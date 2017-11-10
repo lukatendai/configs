@@ -1,6 +1,8 @@
 export PATH=$PATH:"/usr/local/bin:/usr/bin:/bin"
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/bin/mongodb/bin
+export PATH=$PATH:$HOME/bin/dart/bin
+export PATH=$PATH:$HOME/bin/flutter/bin
 export GOPATH=$HOME/golang
 export GOBIN=$HOME/golang/bin
 export GOROOT=$HOME/bin/go
@@ -13,4 +15,4 @@ fi
 export COLORTERM=gnome-256color
 export QT_STYLE_OVERRIDE=adwaita
 export RR_TMPDIR="$HOME/tmp/"
-export TERM=gnome-256color
+export TERM=xterm-256color

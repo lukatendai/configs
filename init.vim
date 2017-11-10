@@ -21,7 +21,6 @@ Plug 'scrooloose/nerdtree'
 
 Plug 'SirVer/ultisnips'
 Plug 't9md/vim-choosewin'
-Plug 'garyburd/go-explorer'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim'
