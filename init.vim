@@ -5,6 +5,7 @@ else
 endif
 
 Plug 'fatih/vim-go'
+Plug 'jodosha/vim-godebug'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -44,17 +45,18 @@ Plug 'burnettk/vim-angular'
 " below plugin couses issues with Enter
 "Plug 'mattn/emmet-vim'
 Plug 'rhysd/committia.vim'
+Plug 'dart-lang/dart-vim-plugin'
 call plug#end()
 " my stuff
 set dir=~/tmp
 nnoremap <F5> :buffers<CR>:buffer<Space>
 nnoremap <A-PageUp> :bnext<CR>
 nnoremap <A-PageDown> :bprevious<CR>
-autocmd FileType javascript noremap <buffer>  <C-M-f> :call JsBeautify()<cr>
-autocmd FileType json noremap <buffer> <C-M-f> :call JsonBeautify()<cr>
-autocmd FileType jsx noremap <buffer> <C-M-f> :call JsxBeautify()<cr>
-autocmd FileType html noremap <buffer> <C-M-f> :call HtmlBeautify()<cr>
-autocmd FileType css noremap <buffer> <C-M-f> :call CSSBeautify()<cr>
+autocmd FileType javascript noremap <buffer>  <C-M-f> :call JsBeautify()<CR>
+autocmd FileType json noremap <buffer> <C-M-f> :call JsonBeautify()<CR>
+autocmd FileType jsx noremap <buffer> <C-M-f> :call JsxBeautify()<CR>
+autocmd FileType html noremap <buffer> <C-M-f> :call HtmlBeautify()<CR>
+autocmd FileType css noremap <buffer> <C-M-f> :call CSSBeautify()<CR>
 autocmd FileType html setlocal ts=4 sw=4 sts=4
 set nowrap
 set mouse=a mousemodel=popup
@@ -567,9 +569,9 @@ if has('nvim')
 
 
   " Use partial fuzzy matches like YouCompleteMe
-  call deoplete#custom#set('_', 'matchers', ['matcher_fuzzy'])
-  call deoplete#custom#set('_', 'converters', ['converter_remove_paren'])
-  call deoplete#custom#set('_', 'disabled_syntaxes', ['Comment', 'String'])
+  call deoplete#custom#source('_', 'matchers', ['matcher_fuzzy'])
+  call deoplete#custom#source('_', 'converters', ['converter_remove_paren'])
+  call deoplete#custom#source('_', 'disabled_syntaxes', ['Comment', 'String'])
 else
   let g:neocomplete#enable_at_startup = 1
   let g:neocomplete#enable_smart_case = 1
